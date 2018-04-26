@@ -28,7 +28,7 @@ class Blogger extends Component {
     
     render () {
         return (
-            <HashRouter>
+            <BrowserRouter>
                 <div>
                     <HeaderComponent component={HeaderComponent}/>
                     <Switch>
@@ -44,7 +44,7 @@ class Blogger extends Component {
                         <Route path='/changePassword' component={ChangePassword}/>
                     </Switch>
                 </div>
-            </HashRouter>
+            </BrowserRouter>
         );
     }
 }
