@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Container, Row, Col } from 'reactstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
 import store from '../store/blogger_store.js';
 import { connect } from 'react-redux';
@@ -23,7 +23,8 @@ class Header extends React.Component {
             console.log('logout action started: got user confirmation:this.props.user.userId'+JSON.stringify(this.props.user.user.userId));
             // logout(this.props.user.user.userId);
         }
-        BrowserHistory.push("/");
+//        BrowserHistory.push("/");
+        this.props.history.push("/");
         // window.location.replace('/');
         // make server call and logout
     }

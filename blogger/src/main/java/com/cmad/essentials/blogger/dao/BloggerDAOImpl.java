@@ -179,8 +179,7 @@ public class BloggerDAOImpl extends BasicDAO<Blog, Long> implements BloggerDAO {
 			case CONTENT:
 				query = (Query<Blog>) datastore.createQuery(Blog.class).disableValidation()
 						.field(searchCriteria.getSearchType().toString())
-						.containsIgnoreCase(searchCriteria.getSearchString()).field("blogCategory.blogCategoryType")
-						.containsIgnoreCase((searchCriteria.getBlogCategoryType().toString()));
+						.containsIgnoreCase(searchCriteria.getSearchString()).field("blogCategory").in(blogCats);
 				break;
 			case AUTHOR:
 				query = (Query<Blog>) datastore.createQuery(Blog.class).disableValidation().field("author.userId")

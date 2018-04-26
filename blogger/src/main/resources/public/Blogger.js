@@ -11,7 +11,7 @@ import Signup from "./components/SignUp.js";
 import EditBlog from "./components/EditBlog.js";
 import EditProfile from "./components/EditProfile.js";
 import store from "./store/blogger_store.js";
-import {HashRouter, Route, Link, Switch} from 'react-router-dom';
+import {HashRouter, BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import { fetchAllBlogsFromServer, fetchBlogsFromServer } from "./actions/Actions.js";
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';

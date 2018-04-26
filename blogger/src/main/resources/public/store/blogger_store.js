@@ -8,6 +8,7 @@ import { createHashHistory } from 'history'
 // import storageLocal from 'redux-persist/lib/storage/local';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import rootReducer from '../reducers/rootReducer.js';
+import { routerMiddleware } from 'react-router-redux';
 
 // create history
 const history = createHashHistory({

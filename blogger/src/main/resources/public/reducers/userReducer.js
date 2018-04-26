@@ -13,13 +13,13 @@ export default function userReducer(state=initialState, action) {
         case USER_RETRIEVAL_FAILED:
             return Object.assign({}, state, {user: null} );
         case USER_REGISTRATION_FAILED:
-            let newState = Object.assign({}, state, {user: undefined});
+            let newState = Object.assign({}, state, {user: undefined, userRegistered: false});
             return newState;
         case USER_REGISTERED_SUCCESSFULLY:
-            newState = Object.assign({}, state, {user: action.user});
+            newState = Object.assign({}, state, {user: action.user, userRegistered: true});
             return newState;
         case USER_LOGGED_IN:
-            newState = Object.assign({}, state, {user:  action.user});
+            newState = Object.assign({}, state, {user:  action.user, userRegistered: false});
             return newState;
         case LOGIN_FAILED:
             return Object.assign({}, state, {user: null});
