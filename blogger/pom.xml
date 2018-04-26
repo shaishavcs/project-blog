@@ -148,7 +148,7 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>Copy frontend build to target</id>
+						<id>Copy frontend build to target dir build</id>
 						<phase>process-resources</phase>
 						<goals>
 							<goal>copy-resources</goal>
