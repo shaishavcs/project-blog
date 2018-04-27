@@ -4,6 +4,7 @@ const initialState = {};
 export default function userReducer(state=initialState, action) {
     switch(action.type) {
         case LOGOUT_SUCCESSFUL:
+        	console.log("tokenReducer:LOGOUT_SUCCESSFUL");
             return Object.assign({}, state, {auth: {token: undefined, refresh_token: undefined, loginSuccessful: false}})
         case LOGIN_SUCCESSFUL:
             if (action.token) {

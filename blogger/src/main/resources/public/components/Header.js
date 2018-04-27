@@ -21,11 +21,11 @@ class Header extends React.Component {
         console.log('logoout action started: confirming from user first:');
         if(confirm('Are you sure you want to logout?')) {
             console.log('logout action started: got user confirmation:this.props.user.userId'+JSON.stringify(this.props.user.user.userId));
-            // logout(this.props.user.user.userId);
+             logout(this.props.user.user.userId);
         }
 //        BrowserHistory.push("/");
-        this.props.history.push("/");
-        // window.location.replace('/');
+//        this.props.history.push("/");
+//        window.location.replace('/');
         // make server call and logout
     }
     render () {

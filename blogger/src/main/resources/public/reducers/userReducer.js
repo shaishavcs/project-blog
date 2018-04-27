@@ -9,7 +9,8 @@ export default function userReducer(state=initialState, action) {
         case PROFILE_UPDATE_FAILED:
             return Object.assign({}, state, {user: action.user});
         case LOGOUT_SUCCESSFUL:
-            return Object.assign({}, state, {user: undefined});
+        	console.log("userReducer:LOGOUT_SUCCESSFUL");
+        		return Object.assign({}, state, {user: null});
         case USER_RETRIEVAL_FAILED:
             return Object.assign({}, state, {user: null} );
         case USER_REGISTRATION_FAILED:
