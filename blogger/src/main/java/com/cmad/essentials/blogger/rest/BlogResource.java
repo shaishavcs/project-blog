@@ -10,7 +10,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -53,7 +52,7 @@ public class BlogResource {
 		blog.setAuthor(user);
 		blogService.postBlog(blog);
 		ResponseEntity<Blog> responseEntity = new ResponseEntity<Blog>(blog, HttpStatus.CREATED);
-		responseEntity.getHeaders().add(HttpHeaders.LOCATION, "/");
+		//		responseEntity.getHeaders().add(HttpHeaders.LOCATION, "/");
 		return responseEntity;
 	}
 
