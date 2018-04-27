@@ -4,8 +4,9 @@
   "description": "building with node and integrating with tomcat",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build",
-    "build": "webpack-dev-server --env=dev --progress --colors",
+    "start dev": "node dev-server --hot",
+    "start": "npm run webpack",
+    "build": "npm run webpack --env=dev --progress --colors",
     "prod": "npm run && webpack --env=prod --progress --colors"
   },
   "author": "Shaishav",

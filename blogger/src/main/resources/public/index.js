@@ -5976,28 +5976,30 @@ var _reactRouterRedux = __webpack_require__(23);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // create history
+//const history = createHashHistory({
+//    basname: '',
+//    hashType: 'slash'
+//  });
+//  
 // defaults to localStorage for web and AsyncStorage for react-native
-var history = (0, _history.createHashHistory)({
-    basname: '',
-    hashType: 'slash'
-});
-// import storageLocal from 'redux-persist/lib/storage/local';
-
-
 var persistConfig = {
     key: 'root',
     storage: _storage2.default,
     blacklist: ['blogs'],
     whitelist: ['user', 'auth']
 };
+// import storageLocal from 'redux-persist/lib/storage/local';
+
 
 var persistedReducer = (0, _reduxPersist.persistReducer)(persistConfig, _rootReducer2.default);
-var store = (0, _redux.createStore)(persistedReducer, (0, _redux.applyMiddleware)(_reduxThunk2.default, _logger2.default, _authenticator2.default, (0, _reactRouterRedux.routerMiddleware)(history)));
+var store = (0, _redux.createStore)(persistedReducer, (0, _redux.applyMiddleware)(_reduxThunk2.default, _logger2.default, _authenticator2.default));
 var getState = store.getState,
     dispatch = store.dispatch,
     subscribe = store.subscribe;
 var _default = store;
 exports.default = _default;
+//, routerMiddleware(history)
+
 ;
 
 (function () {
@@ -6009,7 +6011,6 @@ exports.default = _default;
         return;
     }
 
-    reactHotLoader.register(history, "history", "/Users/ssabapar/Documents/GitHub/project-blog/blogger/src/main/resources/public/store/blogger_store.js");
     reactHotLoader.register(persistConfig, "persistConfig", "/Users/ssabapar/Documents/GitHub/project-blog/blogger/src/main/resources/public/store/blogger_store.js");
     reactHotLoader.register(persistedReducer, "persistedReducer", "/Users/ssabapar/Documents/GitHub/project-blog/blogger/src/main/resources/public/store/blogger_store.js");
     reactHotLoader.register(store, "store", "/Users/ssabapar/Documents/GitHub/project-blog/blogger/src/main/resources/public/store/blogger_store.js");
@@ -34768,7 +34769,7 @@ var Blogger = function (_Component) {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
-                _reactRouterDom.HashRouter,
+                _reactRouterDom.BrowserRouter,
                 null,
                 _react2.default.createElement(
                     "div",

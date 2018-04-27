@@ -11,11 +11,11 @@ import rootReducer from '../reducers/rootReducer.js';
 import { routerMiddleware } from 'react-router-redux';
 
 // create history
-const history = createHashHistory({
-    basname: '',
-    hashType: 'slash'
-  });
-  
+//const history = createHashHistory({
+//    basname: '',
+//    hashType: 'slash'
+//  });
+//  
 const persistConfig = {
     key: 'root',
     storage,
@@ -24,6 +24,7 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-const store = createStore(persistedReducer, applyMiddleware(thunk, logger, authenticator, routerMiddleware(history)));
+const store = createStore(persistedReducer, applyMiddleware(thunk, logger, authenticator));
 const { getState, dispatch, subscribe } = store;
 export default store;
+//, routerMiddleware(history)

@@ -10,8 +10,8 @@ config = {
   devServer: {
     historyApiFallback: true,
     proxy: { // proxy URLs to backend development server
-        '/rest/*': 'http://localhost:8080/',
-        '/oauth/*': 'http://localhost:8080/'
+        '/rest/*': 'http://localhost:8082/',
+        '/oauth/*': 'http://localhost:8082/'
       },
       inline: true,
       port: 7171
