@@ -52,7 +52,6 @@ public class BlogResource {
 		blog.setAuthor(user);
 		blogService.postBlog(blog);
 		ResponseEntity<Blog> responseEntity = new ResponseEntity<Blog>(blog, HttpStatus.CREATED);
-		//		responseEntity.getHeaders().add(HttpHeaders.LOCATION, "/");
 		return responseEntity;
 	}
 
