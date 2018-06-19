@@ -35,7 +35,7 @@ import com.cmad.essentials.blogger.service.UserService;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 /**
- * Some documentation for Blog Resource
+ * Some documentation for Blog Resource which is not complete.
  * 
  * @author ssabapar
  *

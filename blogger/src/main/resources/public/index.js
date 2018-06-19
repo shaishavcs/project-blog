@@ -37808,7 +37808,8 @@ function userReducer() {
         case _ActionConstants.PROFILE_UPDATE_FAILED:
             return Object.assign({}, state, { user: action.user });
         case _ActionConstants.LOGOUT_SUCCESSFUL:
-            return Object.assign({}, state, { user: undefined });
+            console.log("userReducer:LOGOUT_SUCCESSFUL");
+            return Object.assign({}, state, { user: null });
         case _ActionConstants.USER_RETRIEVAL_FAILED:
             return Object.assign({}, state, { user: null });
         case _ActionConstants.USER_REGISTRATION_FAILED:
@@ -37885,6 +37886,7 @@ function userReducer() {
 
     switch (action.type) {
         case _ActionConstants.LOGOUT_SUCCESSFUL:
+            console.log("tokenReducer:LOGOUT_SUCCESSFUL");
             return Object.assign({}, state, { auth: { token: undefined, refresh_token: undefined, loginSuccessful: false } });
         case _ActionConstants.LOGIN_SUCCESSFUL:
             if (action.token) {
@@ -51678,11 +51680,11 @@ var Header = function (_React$Component) {
             console.log('logoout action started: confirming from user first:');
             if (confirm('Are you sure you want to logout?')) {
                 console.log('logout action started: got user confirmation:this.props.user.userId' + JSON.stringify(this.props.user.user.userId));
-                // logout(this.props.user.user.userId);
+                (0, _Actions.logout)(this.props.user.user.userId);
             }
             //        BrowserHistory.push("/");
-            this.props.history.push("/");
-            // window.location.replace('/');
+            //        this.props.history.push("/");
+            //        window.location.replace('/');
             // make server call and logout
         }
     }, {
