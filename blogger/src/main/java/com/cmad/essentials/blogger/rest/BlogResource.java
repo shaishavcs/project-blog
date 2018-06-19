@@ -34,6 +34,12 @@ import com.cmad.essentials.blogger.service.UserService;
 @RequestMapping("/rest/blog")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+/**
+ * Some documentation for Blog Resource
+ * 
+ * @author ssabapar
+ *
+ */
 public class BlogResource {
 
 	@Autowired
